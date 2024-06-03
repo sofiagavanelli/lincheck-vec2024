@@ -1,22 +1,25 @@
 import org.jetbrains.kotlinx.lincheck.LinChecker;
 import org.jetbrains.kotlinx.lincheck.annotations.Operation;
 //import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.ModelCheckingCTest;
+import org.jetbrains.kotlinx.lincheck.annotations.Param;
+import org.jetbrains.kotlinx.lincheck.paramgen.IntGen;
 import org.jetbrains.kotlinx.lincheck.strategy.stress.StressCTest;
 import org.junit.jupiter.api.Test;
 import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.*;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
 
+@Param(name = "data", gen = IntGen.class, conf = "2:8")
 @StressCTest
 @ModelCheckingCTest
 public class DequeTest {
 
     private ConcurrentLinkedDeque<Integer> deque = new ConcurrentLinkedDeque<Integer>();
 
-    @Operation public void addFirst(Integer e) {
+    @Operation public void addFirst(@Param(name = "data") Integer e) {
         deque.addFirst(e);
     }
-    @Operation public void addLast(Integer e) {
+    @Operation public void addLast(@Param(name = "data") Integer e) {
         deque.addLast(e);
     }
     @Operation public void pollFirst() {
