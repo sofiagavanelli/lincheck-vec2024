@@ -5,12 +5,13 @@ import org.jetbrains.kotlinx.lincheck.annotations.Param;
 import org.jetbrains.kotlinx.lincheck.paramgen.IntGen;
 import org.jetbrains.kotlinx.lincheck.strategy.stress.StressCTest;
 import org.junit.jupiter.api.Test;
+//import org.junit.Test;
 import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.*;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Param(name = "data", gen = IntGen.class, conf = "2:8")
-@StressCTest
+@StressCTest(threads = 3)
 @ModelCheckingCTest
 public class DequeTest {
 

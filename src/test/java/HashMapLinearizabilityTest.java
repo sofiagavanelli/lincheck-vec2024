@@ -2,6 +2,7 @@ import org.jetbrains.kotlinx.lincheck.LinChecker;
 import org.jetbrains.kotlinx.lincheck.annotations.Operation;
 import org.jetbrains.kotlinx.lincheck.annotations.Param;
 import org.jetbrains.kotlinx.lincheck.paramgen.IntGen;
+import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.ModelCheckingCTest;
 import org.jetbrains.kotlinx.lincheck.strategy.stress.StressCTest;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +10,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-@Param(name = "key", gen = IntGen.class, conf = "1:5")
+@Param(name = "key", gen = IntGen.class, conf = "1:9")
 @StressCTest
+@ModelCheckingCTest
 public class HashMapLinearizabilityTest {
     private HashMap<Integer, Integer> map = new HashMap<>();;
 

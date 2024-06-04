@@ -6,7 +6,6 @@ import org.jetbrains.kotlinx.lincheck.paramgen.IntGen;
 import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.*;
 import org.jetbrains.kotlinx.lincheck.strategy.stress.StressCTest;
 //import org.junit.Test;
-
 import org.junit.jupiter.api.Test;
 import org.example.Counter;
 //
