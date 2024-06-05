@@ -20,7 +20,7 @@ public class MPSCQueueTest {
         return queue.poll();
     }
 
-    @Operation//(nonParallelGroup = "consumers")
+    @Operation(nonParallelGroup = "consumers")
     public Integer peek() {
         return queue.peek();
     }

@@ -11,8 +11,8 @@ import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Param(name = "data", gen = IntGen.class, conf = "2:8")
-@StressCTest(threads = 3)
-@ModelCheckingCTest
+@ModelCheckingCTest(threads = 3)
+@StressCTest
 public class DequeTest {
 
     private ConcurrentLinkedDeque<Integer> deque = new ConcurrentLinkedDeque<Integer>();

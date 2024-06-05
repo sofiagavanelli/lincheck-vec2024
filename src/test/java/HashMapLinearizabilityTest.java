@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 @Param(name = "key", gen = IntGen.class, conf = "1:9")
-@StressCTest
 @ModelCheckingCTest
+@StressCTest
 public class HashMapLinearizabilityTest {
-    private HashMap<Integer, Integer> map = new HashMap<>();;
+    private HashMap<Integer, Integer> map = new HashMap<>();
 
     @Operation
     public Integer put(@Param(name = "key") int key, int value) {

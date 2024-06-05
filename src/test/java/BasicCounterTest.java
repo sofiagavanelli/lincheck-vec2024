@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 import org.example.Counter;
 //
 
-@ModelCheckingCTest()
-@StressCTest()
+@ModelCheckingCTest
+@StressCTest
 public class BasicCounterTest {
-    private Counter c = new Counter(); // initial state
-    //private SafeCounter c = new SafeCounter();
+    //private Counter c = new Counter(); // initial state
+    private SafeCounter c = new SafeCounter();
 
     // operations on the Counter
     @Operation
